@@ -95,11 +95,11 @@ console.log("original array",numbers);
 
 
 const sliceTest=numbers.slice(1,3);//4,14 last index 3 postion will not be inclue
-console.log(sliceTest);
-console.log("after slice",numbers); //not modify the original array
+// console.log(sliceTest);
+// console.log("after slice",numbers); //not modify the original array
 
 const spliceTest=numbers.splice(1,3)//
-console.log(spliceTest); //4,14,16 include last also
-console.log("after splice",numbers); //modify the original array
+// console.log(spliceTest); //4,14,16 include last also
+// console.log("after splice",numbers); //modify the original array
 
 
