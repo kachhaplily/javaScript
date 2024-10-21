@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #images li img{
+
+            max-width: 200px;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="images">
+        <li>
+            <img src="https://images.pexels.com/photos/135940/pexels-photo-135940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="imag1">
+        </li>
+        <li>
+            <img src="https://images.pexels.com/photos/250591/pexels-photo-250591.jpeg" alt="img2"/>
+        </li >
+        <li id="img3">
+            <img src="https://images.pexels.com/photos/1250260/pexels-photo-1250260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="img3"/>
+        </li>
+    </ul>
+    
+    <script>
+
+        //event propagation
+        /*
+        here when we set event propgrtion true then it work like capturing 
+        by default it behave like bubling
+
+
+        bubbling: child event first occur then parent
+        capturing: parent event first occur then child.
+        */
+        const imagesEle=document.getElementById('images').addEventListener('click' ,(e)=>{
+            console.log("ul is clicked");
+        },false)
+
+        
+
+        //bubling of event 
+        //first it call child elemnet then call parent element.
+        /*
+        when we want to prevent bubbling you have to use e.stopPropagation event 
+        must set by default as false value , 
+        you can not stop progation when true value is set 
+        */
+
+        const img3Ele=document.getElementById('img3').addEventListener('click' ,(e)=>{
+            console.log("img3 is clicked");
+            e.stopPropagation()
+
+        },false)
+
+        
+    </script>
+</body>
+</html>
